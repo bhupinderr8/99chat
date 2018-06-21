@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1073178742149",
+    "firebase_url": "https://cha-66a7d.firebaseio.com",
+    "project_id": "cha-66a7d",
+    "storage_bucket": "cha-66a7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073178742149:android:215ed302b0846597",
+        "android_client_info": {
+          "package_name": "com.example.bhupinder.a99chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073178742149-vtq4mnr1do431hkl2r4sqb02gl1rj726.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1073178742149-vtq4mnr1do431hkl2r4sqb02gl1rj726.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHTDQgiDc2B4WFvOD2O4A95yKndelXDv4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
