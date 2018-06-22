@@ -1,5 +1,6 @@
 package com.example.bhupinder.a99chat.domain;
 
+import com.example.bhupinder.a99chat.contactlist.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

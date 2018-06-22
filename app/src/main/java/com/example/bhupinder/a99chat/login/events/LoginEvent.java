@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat.events;
+package com.example.bhupinder.a99chat.login.events;
 
 public class LoginEvent {
     public final static int onSignInError = 0;

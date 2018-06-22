@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat.ui;
+package com.example.bhupinder.a99chat.login.ui;
 
 public interface LoginView {
     void enableInputs();

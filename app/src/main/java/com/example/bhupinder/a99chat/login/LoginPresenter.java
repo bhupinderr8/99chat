@@ -1,6 +1,6 @@
-package com.example.bhupinder.a99chat;
+package com.example.bhupinder.a99chat.login;
 
-import com.example.bhupinder.a99chat.events.LoginEvent;
+import com.example.bhupinder.a99chat.login.events.LoginEvent;
 
 public interface LoginPresenter {
     void onCreate();

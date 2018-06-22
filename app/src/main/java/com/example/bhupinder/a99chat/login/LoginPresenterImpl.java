@@ -1,7 +1,7 @@
-package com.example.bhupinder.a99chat;
+package com.example.bhupinder.a99chat.login;
 
-import com.example.bhupinder.a99chat.events.LoginEvent;
-import com.example.bhupinder.a99chat.ui.LoginView;
+import com.example.bhupinder.a99chat.login.events.LoginEvent;
+import com.example.bhupinder.a99chat.login.ui.LoginView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -85,7 +85,7 @@ public class LoginPresenterImpl implements LoginPresenter {
                 onSignInError(event.getErrorMessage());
                 break;
 
-            case LoginEvent.onSignInSccess:
+            case LoginEvent.onSignInSuccess:
                 onSignInSuccess();
                 break;
 

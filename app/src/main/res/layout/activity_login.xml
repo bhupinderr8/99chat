@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context=".ui.LoginActivity">
+    tools:context=".login.ui.LoginActivity">
     <!-- Login progress -->
         <ProgressBar
             android:id="@+id/login_progress"
@@ -19,7 +19,7 @@
             android:layout_marginRight="383dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:visibility="gone"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

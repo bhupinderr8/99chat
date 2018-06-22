@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat;
+package com.example.bhupinder.a99chat.login;
 
 public class LoginInteractorImpl implements LoginInteractor{
     private LoginRepository loginRepository;

@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat;
+package com.example.bhupinder.a99chat.login;
 
 public interface LoginRepository {
     void signUp(String email, String password);
