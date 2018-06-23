@@ -60,7 +60,7 @@ public class ContactListPresenterImpl implements ContactListPresenter {
 
     @Override
     public String getCurrentUserEmail() {
-        contactListSessionInteractor.getCurrentUserEmail();
+        return contactListSessionInteractor.getCurrentUserEmail();
     }
 
     @Override

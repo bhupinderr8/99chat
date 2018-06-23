@@ -7,10 +7,11 @@
     android:fitsSystemWindows="true"
     tools:context=".contactlist.ui.ContactListActivity">
 
+
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -24,20 +25,19 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewContacts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_margin="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:scrollbars="vertical"
-        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
-
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:srcCompat="@drawable/web_hi_res_512" />
+        android:id="@+id/fab"
+        android:layout_width="31dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@android:color/white" />
 
 </android.support.design.widget.CoordinatorLayout>

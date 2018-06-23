@@ -89,7 +89,8 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_contactlist, this);
+        getMenuInflater().inflate(R.menu.menu_contact_list, menu);
+        return true;
     }
 
     @Override
@@ -97,7 +98,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.floatingActionButton)
+    @OnClick(R.id.fab)
     public void addContact(){
 
     }

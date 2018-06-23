@@ -60,12 +60,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @Override
     public void showProgress() {
-        mProgressView.setVisibility(View.INVISIBLE);
+        mProgressView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
-        mProgressView.setVisibility(View.VISIBLE);
+        mProgressView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -87,8 +87,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void navigateToMainScreen() {
         startActivity(new Intent(this, ContactListActivity.class));
-        Toast toast = Toast.makeText(getApplicationContext(), "YESS !", Toast.LENGTH_LONG);
-        toast.show();
     }
 
     @Override
