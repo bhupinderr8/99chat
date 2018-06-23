@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat.contactlist;
+package com.example.bhupinder.a99chat.contactlist.entities;
 
 import java.util.Map;
 

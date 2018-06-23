@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.bhupinder.a99chat.ContactListActivity;
+import com.example.bhupinder.a99chat.contactlist.ui.ContactListActivity;
 import com.example.bhupinder.a99chat.login.LoginPresenter;
 import com.example.bhupinder.a99chat.login.LoginPresenterImpl;
 import com.example.bhupinder.a99chat.R;

@@ -2,7 +2,7 @@ package com.example.bhupinder.a99chat.login;
 
 import android.support.annotation.NonNull;
 
-import com.example.bhupinder.a99chat.contactlist.User;
+import com.example.bhupinder.a99chat.contactlist.entities.User;
 import com.example.bhupinder.a99chat.domain.FirebaseHelper;
 import com.example.bhupinder.a99chat.login.events.LoginEvent;
 import com.example.bhupinder.a99chat.lib.GreenRobotEventBus;
