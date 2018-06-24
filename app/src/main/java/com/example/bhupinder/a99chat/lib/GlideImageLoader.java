@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 
+
 public class GlideImageLoader implements ImageLoader {
     private RequestManager glideRequestManager;
 
@@ -18,4 +19,3 @@ public class GlideImageLoader implements ImageLoader {
         glideRequestManager.load(URL).into(imageView);
     }
 }
-

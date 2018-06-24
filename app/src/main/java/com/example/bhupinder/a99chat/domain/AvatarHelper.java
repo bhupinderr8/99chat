@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat.contactlist.entities;
+package com.example.bhupinder.a99chat.domain;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

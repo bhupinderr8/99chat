@@ -2,6 +2,7 @@ package com.example.bhupinder.a99chat.contactlist.events;
 
 import com.example.bhupinder.a99chat.contactlist.entities.User;
 
+
 public class ContactListEvent {
     private User user;
     private int eventType;

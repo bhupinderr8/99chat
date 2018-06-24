@@ -1,4 +1,4 @@
-package com.example.bhupinder.a99chat.contactlist.ui;
+package com.example.bhupinder.a99chat.contactlist.adapters;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -7,15 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.bhupinder.a99chat.R;
-import com.example.bhupinder.a99chat.contactlist.entities.AvatarHelper;
-import com.example.bhupinder.a99chat.contactlist.entities.User;
-import com.example.bhupinder.a99chat.lib.ImageLoader;
-
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
+import com.example.bhupinder.a99chat.R;
+import com.example.bhupinder.a99chat.contactlist.entities.User;
+import com.example.bhupinder.a99chat.contactlist.ui.OnItemClickListener;
+import com.example.bhupinder.a99chat.domain.AvatarHelper;
+import com.example.bhupinder.a99chat.lib.ImageLoader;
 
 
 public class ContactListAdapter extends RecyclerView.Adapter <ContactListAdapter.ViewHolder> {
@@ -33,7 +34,7 @@ public class ContactListAdapter extends RecyclerView.Adapter <ContactListAdapter
 
     @Override
     public ContactListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_content, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_contact, parent, false);
         return new ViewHolder(view);
     }
 
@@ -104,9 +105,12 @@ public class ContactListAdapter extends RecyclerView.Adapter <ContactListAdapter
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.imgAvatar) CircleImageView imgAvatar;
-        @BindView(R.id.txtStatus) TextView txtStatus;
-        @BindView(R.id.txtUser) TextView txtUser;
+        @BindView(R.id.imgAvatar)
+        CircleImageView imgAvatar;
+        @BindView(R.id.txtStatus)
+        TextView txtStatus;
+        @BindView(R.id.txtUser)
+        TextView txtUser;
         View view;
 
         public ViewHolder(View view) {

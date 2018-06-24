@@ -1,5 +1,6 @@
 package com.example.bhupinder.a99chat.login.events;
 
+
 public class LoginEvent {
     public final static int onSignInError = 0;
     public final static int onSignUpError = 1;
@@ -8,21 +9,21 @@ public class LoginEvent {
     public final static int onFailedToRecoverSession = 4;
 
     private int eventType;
-    private String errorMessage;
+    private String errorMesage;
 
-    public int getEventType(){
+    public int getEventType() {
         return eventType;
     }
 
-    public void setEventType(int eventType){
+    public void setEventType(int eventType) {
         this.eventType = eventType;
     }
 
-    public String getErrorMessage(){
-        return errorMessage;
+    public String getErrorMesage() {
+        return errorMesage;
     }
 
-    public void setErrorMessage(String errorMessage){
-        this.errorMessage = errorMessage;
+    public void setErrorMesage(String errorMesage) {
+        this.errorMesage = errorMesage;
     }
 }

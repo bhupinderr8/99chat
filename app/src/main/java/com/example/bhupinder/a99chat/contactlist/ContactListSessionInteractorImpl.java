@@ -1,8 +1,8 @@
 package com.example.bhupinder.a99chat.contactlist;
 
-public class ContactListSessionInteractorImpl implements ContactListSessionInteractor {
 
-    private ContactListRepository contactListRepository;
+public class ContactListSessionInteractorImpl implements ContactListSessionInteractor {
+    ContactListRepository contactListRepository;
 
     public ContactListSessionInteractorImpl() {
         this.contactListRepository = new ContactListRepositoryImpl();

@@ -2,10 +2,6 @@ package com.example.bhupinder.a99chat.login;
 
 import android.support.annotation.NonNull;
 
-import com.example.bhupinder.a99chat.contactlist.entities.User;
-import com.example.bhupinder.a99chat.domain.FirebaseHelper;
-import com.example.bhupinder.a99chat.login.events.LoginEvent;
-import com.example.bhupinder.a99chat.lib.GreenRobotEventBus;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -14,6 +10,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+
+import com.example.bhupinder.a99chat.contactlist.entities.User;
+import com.example.bhupinder.a99chat.domain.FirebaseHelper;
+import com.example.bhupinder.a99chat.lib.EventBus;
+import com.example.bhupinder.a99chat.lib.GreenRobotEventBus;
+import com.example.bhupinder.a99chat.login.events.LoginEvent;
+
 
 public class LoginRepositoryImpl implements LoginRepository {
     private FirebaseHelper helper;
@@ -122,10 +125,10 @@ public class LoginRepositoryImpl implements LoginRepository {
         LoginEvent loginEvent = new LoginEvent();
         loginEvent.setEventType(type);
         if (errorMessage != null) {
-            loginEvent.setErrorMessage(errorMessage);
+            loginEvent.setErrorMesage(errorMessage);
         }
 
-        GreenRobotEventBus eventBus = GreenRobotEventBus.getInstance();
+        EventBus eventBus = GreenRobotEventBus.getInstance();
         eventBus.post(loginEvent);
     }
 

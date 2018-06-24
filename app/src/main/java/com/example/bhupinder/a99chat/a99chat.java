@@ -1,14 +1,13 @@
 package com.example.bhupinder.a99chat;
 
+
 import android.app.Application;
 
 import com.example.bhupinder.a99chat.lib.GlideImageLoader;
 import com.example.bhupinder.a99chat.lib.ImageLoader;
 import com.google.firebase.database.FirebaseDatabase;
 
-
-
-public class AndroidChatApplication extends Application {
+public class a99chat extends Application {
     private ImageLoader imageLoader;
 
     @Override

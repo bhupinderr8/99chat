@@ -1,6 +1,8 @@
 package com.example.bhupinder.a99chat.login;
 
-public class LoginInteractorImpl implements LoginInteractor{
+
+
+public class LoginInteractorImpl implements LoginInteractor {
     private LoginRepository loginRepository;
 
     public LoginInteractorImpl() {
@@ -8,8 +10,8 @@ public class LoginInteractorImpl implements LoginInteractor{
     }
 
     @Override
-    public void checkAlreadyAuthenticated() {
-        loginRepository.checkAlreadyAuthenticated();
+    public void doSignUp(final String email, final String password) {
+        loginRepository.signUp(email, password);
     }
 
     @Override
@@ -18,7 +20,7 @@ public class LoginInteractorImpl implements LoginInteractor{
     }
 
     @Override
-    public void doSignUp(String email, String password) {
-        loginRepository.signUp(email, password);
+    public void checkAlreadyAuthenticated() {
+        loginRepository.checkAlreadyAuthenticated();
     }
 }

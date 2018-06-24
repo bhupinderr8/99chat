@@ -1,56 +1,79 @@
 package com.example.bhupinder.a99chat.login.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-
-import com.example.bhupinder.a99chat.contactlist.ui.ContactListActivity;
-import com.example.bhupinder.a99chat.login.LoginPresenter;
-import com.example.bhupinder.a99chat.login.LoginPresenterImpl;
-import com.example.bhupinder.a99chat.R;
+import android.widget.RelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.example.bhupinder.a99chat.R;
+import com.example.bhupinder.a99chat.contactlist.ui.ContactListActivity;
+import com.example.bhupinder.a99chat.login.LoginPresenter;
+import com.example.bhupinder.a99chat.login.LoginPresenterImpl;
 
-public class LoginActivity extends AppCompatActivity implements LoginView{
+public class LoginActivity extends AppCompatActivity
+                           implements LoginView {
+    @BindView(R.id.btnSignin)
+    Button btnSignIn;
+    @BindView(R.id.btnSignup)
+    Button btnSignUp;
+    @BindView(R.id.editTxtEmail)
+    EditText inputEmail;
+    @BindView(R.id.editTxtPassword)
+    EditText inputPassword;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+    @BindView(R.id.layoutMainContainer)
+    RelativeLayout container;
 
     private LoginPresenter loginPresenter;
-    // UI references.
-    @BindView(R.id.email) AutoCompleteTextView mEmailView;
-    @BindView(R.id.password) EditText mPasswordView;
-    @BindView(R.id.login_progress) ProgressBar mProgressView;
-    @BindView(R.id.email_sign_in_button) Button mSignInButton;
-    @BindView(R.id.email_sign_up_button) Button mSignUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
         loginPresenter = new LoginPresenterImpl(this);
         loginPresenter.onCreate();
         loginPresenter.checkForAuthenticatedUser();
-
-    }
-
-    private void setInputs(boolean bool){
-        mEmailView.setEnabled(bool);
-        mPasswordView.setEnabled(bool);
-        mSignInButton.setEnabled(bool);
-        mSignUpButton.setEnabled(bool);
     }
 
     @Override
-    public void enableInputs() {
-        setInputs(true);
+    protected void onDestroy() {
+        loginPresenter.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    @OnClick(R.id.btnSignup)
+    public void handleSignUp() {
+        loginPresenter.registerNewUser(inputEmail.getText().toString(),
+                inputPassword.getText().toString());
+    }
+
+    @Override
+    @OnClick(R.id.btnSignin)
+    public void handleSignIn() {
+        loginPresenter.validateLogin(inputEmail.getText().toString(),
+                inputPassword.getText().toString());
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -59,29 +82,15 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
     @Override
-    public void showProgress() {
-        mProgressView.setVisibility(View.VISIBLE);
+    public void enableInputs() {
+        setInputs(true);
     }
 
     @Override
-    public void hideProgress() {
-        mProgressView.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
-    @OnClick(R.id.email_sign_in_button)
-    public void handleSignIn() {
-        loginPresenter.validateLogin(mEmailView.getText().toString(),
-                                    mPasswordView.getText().toString());
-
-    }
-
-    @Override
-    @OnClick(R.id.email_sign_up_button)
-    public void handleSignUp() {
-        Toast toast = Toast.makeText(getApplicationContext(), "YESS !", Toast.LENGTH_LONG);
-        toast.show();
-        loginPresenter.registerNewUser(mEmailView.getText().toString(), mPasswordView.getText().toString());
+    public void loginError(String error) {
+        inputPassword.setText("");
+        String msgError = String.format(getString(R.string.login_error_message_signin), error);
+        inputPassword.setError(msgError);
     }
 
     @Override
@@ -90,27 +99,21 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
     @Override
-    public void loginError(String error) {
-        mPasswordView.setText("");
-        mPasswordView.setError(error);
+    public void newUserError(String error) {
+        inputPassword.setText("");
+        String msgError = String.format(getString(R.string.login_error_message_signup), error);
+        inputPassword.setError(msgError);
     }
 
     @Override
     public void newUserSuccess() {
-        Toast toast = Toast.makeText(getApplicationContext(), "ID Registered", Toast.LENGTH_LONG);
-        toast.show();
+        Snackbar.make(container, R.string.login_notice_message_useradded, Snackbar.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void newUSerError(String error) {
-        mPasswordView.setText("");
-        mPasswordView.setError(error);
-    }
-
-    @Override
-    protected void onDestroy() {
-        loginPresenter.onDestroy();
-        super.onDestroy();
+    private void setInputs(boolean enabled){
+        btnSignIn.setEnabled(true);
+        btnSignUp.setEnabled(true);
+        inputEmail.setEnabled(true);
+        inputPassword.setEnabled(true);
     }
 }
-

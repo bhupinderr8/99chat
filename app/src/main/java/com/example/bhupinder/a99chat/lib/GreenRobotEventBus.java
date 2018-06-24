@@ -1,7 +1,6 @@
 package com.example.bhupinder.a99chat.lib;
 
 
-
 public class GreenRobotEventBus implements EventBus {
     org.greenrobot.eventbus.EventBus eventBus;
 
